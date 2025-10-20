@@ -50,3 +50,4 @@ y = [predict_efficiency(i, ki, kd, air_velocity, water_flow)[0] for i in x]
 st.line_chart(pd.DataFrame({"Kp": x, "Efficiency": y}).set_index("Kp"))
 
 st.success("Dashboard ready — experiment with the sliders to see how control tuning affects performance.")
+
