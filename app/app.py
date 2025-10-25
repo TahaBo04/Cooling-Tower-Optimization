@@ -5,7 +5,7 @@ import joblib
 
 st.set_page_config(page_title="Cooling Tower Optimization", page_icon="🧊", layout="wide")
 
-st.title("🧊 Cooling Tower Optimization Dashboard")
+st.title("Cooling Tower Optimization Dashboard")
 st.markdown("""
 This interactive dashboard lets you explore how PID parameters affect the **cooling tower efficiency**.
 Adjust the sliders below to see predicted performance indicators based on your control inputs.
@@ -44,10 +44,11 @@ col3.metric("CO₂ Emissions (kg)", f"{co2:.3f}")
 col4.metric("Water Use (L)", f"{water:.2f}")
 
 # Chart visualization
-st.markdown("### 📈 Efficiency Trend Simulation")
+st.markdown("### Efficiency Trend Simulation")
 x = np.linspace(1.0, 1.5, 50)
 y = [predict_efficiency(i, ki, kd, air_velocity, water_flow)[0] for i in x]
 st.line_chart(pd.DataFrame({"Kp": x, "Efficiency": y}).set_index("Kp"))
 
 st.success("Dashboard ready — experiment with the sliders to see how control tuning affects performance.")
+
 
